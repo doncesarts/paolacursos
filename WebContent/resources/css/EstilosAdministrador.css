@@ -1,0 +1,227 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+H1{
+	/*background: rgba(0,0,0,0.3);*/
+	background:#dddde2;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	color: #666;
+	font-family: sans-serif;
+	font-size: large;
+	text-align: center;
+	padding-bottom:  10px;
+	padding-top: 10px;
+
+}
+
+/*Estilos para formatear administrador de cursos */
+H4{
+	
+	color: #999999;
+font-family: arial, sans-serif;
+font-size: 16px;
+font-weight: bold;
+margin-top: 1px;
+margin-bottom: 1px;
+}
+
+H5{
+	
+
+font-family: arial, sans-serif;
+font-size: 12px;
+font-weight: bold;
+margin-top: 1px;
+margin-bottom: 1px;
+}
+
+.menu a {
+	
+	color: #eee;
+	/* 	le quitamos la linea del hipervinculo */
+	text-decoration: none;
+	
+	/* 	La altura del menu */
+	line-height: 3em;
+	
+	/* 	 Se realiza para que al momento de pasar el mouse sobre el enlace todo se ilumine y no 
+	solo el elemento a*/
+	display: block;
+	
+	padding-left: 1em;
+	font-weight: bold;
+	font-size: .9em;
+}
+
+a:HOVER {
+	/*Gris con opacidad del 20% */
+	background: rgba(0, 0, 0, 0.2);
+}
+
+
+ul li{
+		/* relativas asi mismo dentro del documento  es decir seran guiadas por sus
+		atributos padding, borde etc */
+		position: relative;
+		
+}
+
+
+ul li ul{
+		/*se posicionaran de acuerdo a su padre mas cercano que tenga un elemento relativo 
+		o absoluto en este caso a ul li*/
+		position: absolute;
+	list-style: none;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	/*background: #06a2B4;*/
+	background: #a00050;
+	
+	display:none;
+}
+li {
+	/* 	hacemos que todo el espacio horizontal se divida entre todos los li. */
+	flex: auto;
+
+	
+	/* 	borderde1pixel negro con 20 % de opacidad */
+	border-bottom: 1px solid #c0c0c0;
+
+	/* aplicamos el estilo solamente al ultimo elemento*/
+	&:
+	last-child
+	{
+	border-right
+	:
+	none;
+}
+
+}
+
+/*
+Aplicamos propiedades cuando la pantalle llegue a un minimo con una media  query
+*/
+@media screen and (min-width: 768px) {
+	.menu {
+		/*Elemento padre que nos permite que se muestre de forma horizontal 
+		  si la quitamos se mostraria verticalmente.
+		*/
+		display: flex;
+		text-align: center;
+	}
+	a {
+		padding-left: 0em;
+	}
+	li {
+		border-right: 1px solid #c0c0c0;
+		&:
+		last-chid
+		{
+		border-right
+		:
+		none;
+	}
+}
+
+
+
+.toogle-menu {
+	display: none;
+}
+
+}
+.menu {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	/*background: #4682B4;*/
+	background: #6d1a42;
+}
+
+.toogle-menu {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	background: #6d1a42;
+	padding-left: 1em;
+	font-weight: bold;
+	font-size: .9em;
+	line-height: 3em;
+	color: #fff;
+}
+
+.fondo{
+	    		margin-top: 30px;
+	    		background-image: url(../images/Picture1.png);
+	    		background-repeat: no-repeat;
+	    		background-position: top;
+	    		height: 980px;
+	    		z-index: 1;
+
+
+}
+
+.SinFondo{
+	background-image: url(../images/Picture21.png);
+	
+}
+
+#margen{
+	height: 30px;
+}
+
+#inner-div2{
+	font-family: sans-serif;
+	font-size: medium;
+	
+}
+
+/* Asigno un padre para aplicar el flexbox*/
+.flex-container {
+   width: 100%;
+    padding: 0;
+    padding-left: 20px;
+    
+/*Aplico las propiedades de flex con los prefijos de los navegadores*/    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+   /* justify-content: center;*/
+}
+
+/*Con la propiedad flex le decimos que se flexible dentro del container padre con */
+.row {
+    width: auto;
+    align-items:center;
+    flex:1;
+}
+
+/*Agregamos divs en los costados para que el div interno este centrado */
+#left, #right{
+	flex:1;
+	padding-left: 20px;
+	
+	}
+
+#blank{
+	height: 90px;
+}
+
+.upload{
+	
+    border-style: solid;
+    border-width: 1px;
+
+}

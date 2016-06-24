@@ -1,0 +1,15 @@
+-Crear un proyecto de java web
+-incluir los jars de struts 2
+- modificar el archivo WEB.XMLpara incluir el filtermapping
+- crear el archivo de struts.xml en src.
+- en archivo struts src colocar los actions con su nombre la clase que los implementa y el metodo
+  adicionalmente se colocara los result name con los codigos de respuesta del metodo y indicar a donde se
+  redirige la pagina.
+- crear el jsp
+- dentro del jsp agregar las etiquetas de strusts. <%@taglib uri="/struts-tags" prefix="s" %>
+- agregar el formulario con la equita de struts y el form colocar el action.
+- en cada component del formulario hacerlo con struts y ponerlo como nombre el atributo de
+ la clase action que implanta.
+
+
+
