@@ -33,6 +33,16 @@ public class UnidadesDAO extends JdbcDaoSupport{
 			   StringBuffer xmlStr = new StringBuffer( curso.getTemario() );
 			   TEMARIO root = (TEMARIO) u.unmarshal( new StreamSource( new StringReader( xmlStr.toString() ) ));
 			  
+			   String deleteSql = "DELETE FROM UNIDADES WHERE ID_CURSO = ?";
+
+			     Object[] params = { id };
+			  
+			   	 int[] types = {Types.INTEGER};
+			   
+				this.getJdbcTemplate().update(deleteSql,params, types);
+
+			   
+			   
 			    for(TEMARIO.UNIDAD p:root.getUNIDAD()){
 			    
 			   
