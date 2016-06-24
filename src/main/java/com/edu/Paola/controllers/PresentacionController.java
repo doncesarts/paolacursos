@@ -90,7 +90,7 @@ public class PresentacionController {
 				UploadDropBox uploadDropBox = new UploadDropBox();
 				try {
 					uploadDropBox.subir(filePath, fileName, request);
-				} catch (DbxException | IOException e) {
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
