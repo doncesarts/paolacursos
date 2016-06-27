@@ -36,7 +36,7 @@ public class UploadDropBox {
         String realPathtoUploads = request.getSession().getServletContext().getRealPath("/") + fileName;
         
         // Get files and folder metadata from Dropbox root directory
-        ListFolderResult result = client.files().listFolder("");
+/*        ListFolderResult result = client.files().listFolder("");
         while (true) {
             for (Metadata metadata : result.getEntries()) {
                 System.out.println(metadata.getPathLower());
@@ -48,7 +48,7 @@ public class UploadDropBox {
 
             result = client.files().listFolderContinue(result.getCursor());
         }
-
+*/
         // Upload "test.txt" to Dropbox
         
         //InputStream in = Main.class.getResourceAsStream("/main/resources/Seguro.pdf");
@@ -59,9 +59,5 @@ public class UploadDropBox {
               .uploadAndFinish(in2);
       
 
-  /*      try ( InputStream in = UploadDropBox.class.getResourceAsStream(realPathtoUploads)) {
-            FileMetadata metadata = client.files().uploadBuilder("/main/resources/" + fileName)
-                .uploadAndFinish(in2);
-        }*/
     }
 }

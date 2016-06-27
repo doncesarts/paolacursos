@@ -36,16 +36,15 @@ public class DownloadDropbox {
 	        	
 	        				 
 	        				 
-	        		 String uploadsDir = "/uploads/";
-	                // String realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
-					
+	    /*    		 String uploadsDir = "/uploads/";
+	             				
 	                 if(! new File(uploadsDir).exists())
 	                 {
 	                     new File(uploadsDir).mkdir();
-	                 }
+	                 }*/
         		 try {
 	        		     md = client.getFile("/main/resources/" +fileName, null, out);
-	        		     System.out.println("entre");
+	        	
 	        		 }
 	        		 catch(Exception e)
 	        		 {
