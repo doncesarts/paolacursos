@@ -89,6 +89,13 @@
       <artifactId>openshift-java-client</artifactId>
       <version>2.7.0.Final</version>
   </dependency>
+  <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jni -->
+<dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-jni</artifactId>
+    <version>8.0.36</version>
+</dependency>
+  
   </dependencies>
   
    <profiles>
