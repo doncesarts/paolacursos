@@ -5,15 +5,40 @@
   <groupId>com.edu</groupId>
   <artifactId>Paola</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>Paola</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ <!-- Define the version of JBoss' Java EE 6 APIs and Tools we want to import.  -->
+      <javaee6.with.tools.version>1.0.0.M1</javaee6.with.tools.version>
+      <!-- Alternatively, comment out the above line, and un-comment the line below to 
+        use version 3.0.0.Beta1-redhat-1 which is a release certified 
+      to work with JBoss EAP 6. It requires you have access to the JBoss EAP 6 maven repository. -->
+      <!-- 
+      <javaee6.spec.version>3.0.0.Beta1-redhat-1</javaee6.spec.version> 
+      -->    
   </properties>
-
+   <dependencyManagement>
+      <dependencies>
+        <!-- JBoss distributes a complete set of Java EE 6 APIs including a Bill 
+          of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
+          of artifacts. We use this here so that we always get the correct versions 
+          of artifacts. Here we use the jboss-javaee-6.0-with tools stack (you can read this as 
+          the JBoss stack of the Java EE 6 APIs, with some extras tools for your project, such
+          as Arquillian for testing) -->
+         <dependency>
+            <groupId>org.jboss.bom</groupId>
+            <artifactId>jboss-javaee-6.0-with-tools</artifactId>
+            <version>${javaee6.with.tools.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+      </dependencies>
+   </dependencyManagement>
+   
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -108,7 +133,7 @@
                         <artifactId>maven-war-plugin</artifactId>
                         <version>2.1.1</version>
                         <configuration>
-                            <outputDirectory>webapps</outputDirectory>
+                            <outputDirectory>deployments</outputDirectory>
                             <warName>ROOT</warName>
                         </configuration>
                     </plugin>
